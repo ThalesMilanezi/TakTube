@@ -1,6 +1,7 @@
-import { BaseEntity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import { UserRoler } from '../../model/user';
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { UserRole } from '../../model/user';
 
+@Entity()
 export class User extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id!: string
@@ -12,5 +13,5 @@ export class User extends BaseEntity {
   password!: string
 
   @Column()
-  userRole!: UserRoler
+  userRole!: UserRole
 }
