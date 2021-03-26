@@ -6,11 +6,11 @@ export default {
   password: process.env.TYPEORM_PASSWORD,
   database: process.env.TYPEORM_DATABASE,
   synchronize: process.env.TYPEORM_SYNCHRONIZE,
-  logging: process.env.LOGGING,
+  logging: process.env.TYPEORM_LOGGING,
   entities: ['src/data/entity/**/*.ts'],
   migrations: ['src/data/migration/**/*.ts'],
   cli: {
     entitiesDir: 'src/data/entity',
     migrationsDir: 'src/data/migration',
   },
-};
+}

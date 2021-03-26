@@ -4,7 +4,8 @@ export interface User {
   password: string
 }
 
-export enum UserRoler {
-	admin,
-	normal
+export interface UserInput {
+  email: string
+  password: string
 }
+
