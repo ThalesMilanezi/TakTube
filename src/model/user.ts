@@ -1,17 +1,11 @@
-export interface UserModel {
+export interface User {
   id: string
   email: string
   password: string
-  userRole: UserRole
 }
 
-export interface UserInputModel {
+export interface UserInput {
   email: string
   password: string
-  userRole: UserRole
 }
 
-export enum UserRole {
-	admin,
-	normal
-}

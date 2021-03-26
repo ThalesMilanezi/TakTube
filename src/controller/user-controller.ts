@@ -1,17 +1,15 @@
 import { Controller, Post } from '@overnightjs/core'
 import { Request, Response } from 'express'
-import { UserBusiness } from '../business/user-business'
-import { UserRole } from '../model/user'
+import { UserDataBase } from '../data/db/user-database'
 
-@Controller('user')
+@Controller('register')
 export class UserController {
   @Post()
-  public Register(req: Request, res: Response) {
+  public register(req: Request, res: Response) {
     try {
-      const { email, password, userRole } = req.body
-      const userBusiness = new UserBusiness()
-      const user = userBusiness.insert({ email, password, userRole: UserRole.admin})
-      console.log('user aqui controller', user)
+      const { email, password } = req.body
+      const userDatabase = new UserDataBase()
+      const user = userDatabase.create({ email, password})
       return res.status(200).send({ user, message: 'usuario criado com sucesso' })
     } catch (err) {
       res.status(400).send({ message: err.message })
